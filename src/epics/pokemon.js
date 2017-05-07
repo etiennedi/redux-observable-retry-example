@@ -1,7 +1,15 @@
 import { Observable } from 'rxjs';
 import { START_REQUEST, ABORT_RETRY, received, error, abortRetry } from '../ducks/pokemon';
 
-export default function fetchPokemon(action$, _, { api }) {
+const fakeRequest = () => {
+  if (Math.random() > 0.8) {
+    return Promise.resolve(['item1', 'item2', 'item3']);
+  }
+  return Promise.reject('Request Failed');
+};
+
+
+export default function fetchPokemon(action$) {
   return action$
     .ofType(START_REQUEST)
     .switchMap(() =>
@@ -10,9 +18,9 @@ export default function fetchPokemon(action$, _, { api }) {
         Observable.concat(
           Observable.of({ type: 'starting_request' }),
           Observable
-            // .fromPromise(api.getPokemon())
-            // .map(({ data: { results } }) => received(results))
-            .throw(new Error('some error'))
+            .of(1)
+            .switchMap(fakeRequest)
+            .map(results => received(results))
             .catch(err => Observable.concat(
               Observable.of(({ type: 'starting_retry' })),
               Observable

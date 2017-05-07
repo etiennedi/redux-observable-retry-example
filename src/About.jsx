@@ -17,7 +17,7 @@ export class About extends Component {
           }
         </ul>
         <button onClick={this.props.startRequest}>Start Request</button>
-        <button onClick={this.props.abortRetry}>Abort</button>
+        <button onClick={this.props.abortRetry} style={{ marginLeft: '20px' }}>Abort</button>
       </div>
     );
   }
