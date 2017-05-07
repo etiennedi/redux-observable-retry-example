@@ -1,7 +1,7 @@
 {
-  "name": "react-workshop-01",
+  "name": "redux-observable-retry-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Doing retrys when requests fail including status updates",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -10,14 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/etiennedi/react-workshop-01.git"
+    "url": "git+https://github.com/etiennedi/redux-observable-retry-example.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/etiennedi/react-workshop-01/issues"
-  },
-  "homepage": "https://github.com/etiennedi/react-workshop-01#readme",
   "devDependencies": {
     "@types/jest": "^18.1.1",
     "babel-core": "^6.23.1",
