@@ -1,6 +1,7 @@
-export const MOUNTED = 'workshop/pokemon/mounted';
+export const START_REQUEST = 'workshop/pokemon/startRequest';
 export const RECEIVED = 'workshop/pokemon/received';
 export const ERROR = 'workshop/pokemon/error';
+export const ABORT_RETRY = 'workshop/pokemon/abortRetry';
 
 export default function reducer(state = [], action) {
   switch (action.type) {
@@ -17,8 +18,12 @@ export default function reducer(state = [], action) {
   }
 }
 
-export const mounted = () => ({
-  type: MOUNTED,
+export const startRequest = () => ({
+  type: START_REQUEST,
+});
+
+export const abortRetry = () => ({
+  type: ABORT_RETRY,
 });
 
 export const error = message => ({

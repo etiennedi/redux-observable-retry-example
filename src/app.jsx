@@ -12,8 +12,6 @@ import {
 import { createEpicMiddleware } from 'redux-observable';
 
 import reducers from './ducks';
-import Contact from './ContactForm';
-import Home from './Home';
 import About from './About';
 import './styles.css';
 import rootEpic from './epics';
@@ -31,27 +29,10 @@ ReactDOM.render(
         <ul className="navigation">
           <li>
             <NavLink
-              exact
               activeClassName="active"
               to="/"
             >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="active"
-              to="/about"
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="active"
-              to="/contact"
-            >
-              Contact
+              Retry-Example
             </NavLink>
           </li>
         </ul>
@@ -59,15 +40,7 @@ ReactDOM.render(
           <Route
             exact
             path="/"
-            component={Home}
-          />
-          <Route
-            path="/about"
             component={About}
-          />
-          <Route
-            path="/contact"
-            component={Contact}
           />
         </div>
       </div>

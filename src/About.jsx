@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { mounted } from './ducks/pokemon';
+import { startRequest, abortRetry } from './ducks/pokemon';
 
 export class About extends Component {
-
-  componentWillMount() {
-    this.props.mounted();
-  }
 
   render() {
     const { pokemon } = this.props;
 
     return (
       <div>
-        <h1>My favorite Pokemon</h1>
+        <h1>Get data from server</h1>
         <ul>
           {
             pokemon.map(({ name }) => <li key={name}>{name}</li>)
           }
         </ul>
+        <button onClick={this.props.startRequest}>Start Request</button>
+        <button onClick={this.props.abortRetry}>Abort</button>
       </div>
     );
   }
@@ -27,6 +25,9 @@ export class About extends Component {
 
 const mapStateToProps = ({ pokemon }) => ({ pokemon });
 
-const mapDispatchToProps = { mounted };
+const mapDispatchToProps = {
+  startRequest,
+  abortRetry,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
