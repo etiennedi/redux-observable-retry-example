@@ -12,7 +12,7 @@ import {
 import { createEpicMiddleware } from 'redux-observable';
 
 import reducers from './ducks';
-import About from './About';
+import SampleRequest from './SampleRequest';
 import './styles.css';
 import rootEpic from './epics';
 
@@ -40,7 +40,7 @@ ReactDOM.render(
           <Route
             exact
             path="/"
-            component={About}
+            component={SampleRequest}
           />
         </div>
       </div>
