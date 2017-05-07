@@ -1,8 +1,6 @@
 import { combineEpics } from 'redux-observable';
 import sampleRequest from './sampleRequest';
 
-import * as api from '../api';
-
-export default (...args) => combineEpics(
+export default combineEpics(
   sampleRequest,
-)(...args, { api });
+);

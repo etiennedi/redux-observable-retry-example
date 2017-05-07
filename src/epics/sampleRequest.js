@@ -20,7 +20,7 @@ export default function sampleRequest(action$) {
           Observable
             .of(1)
             .switchMap(fakeRequest)
-            .map(results => received(results))
+            .map(received)
             .catch(err => Observable.concat(
               Observable.of(retryStarted()),
               Observable
