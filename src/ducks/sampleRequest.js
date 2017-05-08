@@ -1,10 +1,10 @@
-export const START_REQUEST = 'workshop/pokemon/startRequest';
-export const RECEIVED = 'workshop/pokemon/received';
-export const ERROR = 'workshop/pokemon/error';
-export const ABORT_RETRY = 'workshop/pokemon/abortRetry';
-export const REQUEST_STARTED = 'workshop/pokemon/REQUEST_STARTED';
-export const RETRY_STARTED = 'workshop/pokemon/RETRY_STARTED';
-export const RETRY_TIMER_UPDATED = 'workshop/pokemon/RETRY_TIMER_UPDATED';
+export const START_REQUEST = 'retry-example/startRequest';
+export const RECEIVED = 'retry-example/received';
+export const ERROR = 'retry-example/error';
+export const ABORT_RETRY = 'retry-example/abortRetry';
+export const REQUEST_STARTED = 'retry-example/REQUEST_STARTED';
+export const RETRY_STARTED = 'retry-example/RETRY_STARTED';
+export const RETRY_TIMER_UPDATED = 'retry-example/RETRY_TIMER_UPDATED';
 
 
 export default function reducer(state = { data: [], attempt: 0 }, action) {
